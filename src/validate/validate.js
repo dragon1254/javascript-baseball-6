@@ -14,7 +14,25 @@ class validate{
             throw new Error(error.range);
         }
     }
-    
+    everyGame(eachGameNumber){
+        eachGameNumber.forEach(element => {
+            if(!number.withZeroNatural.includes(element)){
+                throw new Error(error.string);
+            }
+            if(!number.natural.includes(element)){
+                throw new Error(error.zero);
+            }
+        });
+    }
+    reGame(doYouReGame){
+        const checkReGameNumber = Number(doYouReGame);
+        if(isNaN(checkReGameNumber)){
+            throw new Error(error.string);
+        }
+        if(!number.reGameNumber.includes(checkReGameNumber)){
+            throw new Error(error.regame);
+        }
+    }
 }
 
 export default validate;
