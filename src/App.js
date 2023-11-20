@@ -1,5 +1,14 @@
+import controller from "./domain/controller/controller";
+
 class App {
-  async play() {}
+
+  constructor(){
+    this.mygame = new controller()
+  }
+
+  async play() {
+    await this.mygame.run()
+  }
 }
 
 export default App;
