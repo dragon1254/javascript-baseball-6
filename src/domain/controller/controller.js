@@ -40,7 +40,7 @@ class controller{
 
     async startGame(){
         await this.getMyNumber();
-        await this.compareNumbers();
+        // await this.compareNumbers();
     }
         // 숫자 입력 받음
     async getMyNumber(){
@@ -56,28 +56,20 @@ class controller{
         //     MissionUtils.Console.print(err);
         //     return await this.getMyNumber();
         // }
+        this.compareNumbers()
     }
         // 컴퓨터 숫자와 비교
     async compareNumbers(){
         let strike = 0;
         let ball = 0;
-
-        for(let i = 0; i < this.#myGameNumber.length; i++){
-            if(this.#myGameNumber[i] === this.#computerArray[i]){
+        this.#myGameNumber.forEach((element, index) => {
+            if(this.#computerArray.includes(element) && this.#computerArray[index] === element){
                 strike++
             }
-        }
-
-        // this.#myGameNumber.forEach((element, index) => {
-        //     if(this.#computerArray.include(element) && this.#computerArray[index] === element){
-        //         strike++
-        //     }
-        //     if(this.#computerArray.include(element)){
-        //         ball++
-        //     }
-        // });
-        console.log(strike);
-        console.log(ball);
+            else if(this.#computerArray.includes(element)){
+                ball++
+            }
+        });
         outputView.printStrikesAndBalls(strike, ball);
         if(strike !== 3/*this.#gamenumber*/){
             await this.getMyNumber()
@@ -89,10 +81,12 @@ class controller{
         // 재시작 여부 묻기
         const wantReGame = await inputView.reGame()
         this.#validator.reGame(wantReGame);
-        if(wantReGame === 1){
+        const wantReGameNumber = Number(wantReGame)
+        if(wantReGameNumber === 1){
+            console.log(2000)
             return await this.run();
         }
-        if(wantReGame === 2){
+        if(wantReGameNumber === 2){
             outputView.endGame();
         }
         // 재시작시 처음부터, 재시작 안할시 종료

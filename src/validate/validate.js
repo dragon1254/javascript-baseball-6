@@ -27,7 +27,6 @@ class validate{
     }
     reGame(doYouReGame){
         const checkReGameNumber = Number(doYouReGame);
-        console.log(checkReGameNumber);
         if(isNaN(checkReGameNumber)){
             throw new Error(error.string);
         }

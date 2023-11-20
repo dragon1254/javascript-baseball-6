@@ -12,13 +12,13 @@ const outputView = {
             MissionUtils.Console.print('낫싱')
         }
         if(ball === 0 && strike !== 0){
-            MissionUtils.Console.print(`${strike}스크라이크`)
+            MissionUtils.Console.print(`${strike}스트라이크`)
         }
         if(ball !== 0 && strike === 0){
             MissionUtils.Console.print(`${ball}볼`)
         }
         if(ball !==0 && strike !== 0){
-            MissionUtils.Console.print(`${ball}볼 ${strike}스크라이크`)
+            MissionUtils.Console.print(`${ball}볼 ${strike}스트라이크`)
         }
     },
     endGame(){
