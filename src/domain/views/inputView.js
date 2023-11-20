@@ -6,7 +6,8 @@ import validate from "../../validate/validate";
 const inputView = {
     async howManyGames(){
         const getGameNumber = await MissionUtils.Console.readLineAsync(message.manyGame);
-        validate.gameCount(getGameNumber);
+        const validateNumber = new validate();
+        validateNumber.gameCount(getGameNumber);
         return getGameNumber;
     },
 

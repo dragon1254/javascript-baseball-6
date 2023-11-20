@@ -4,6 +4,7 @@ import number from "../constant/number";
 class validate{
     gameCount(getGameNumber){
         const checkGameNumber = Number(getGameNumber);
+        console.log(getGameNumber);
         if(isNaN(checkGameNumber)){
             throw new Error(error.string);
         }
