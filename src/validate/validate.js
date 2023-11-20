@@ -2,19 +2,19 @@ import error from "../constant/error";
 import number from "../constant/number";
 
 class validate{
-    gameCount(getGameNumber){
-        const checkGameNumber = Number(getGameNumber);
-        console.log(getGameNumber);
-        if(isNaN(checkGameNumber)){
-            throw new Error(error.string);
-        }
-        if(checkGameNumber < number.gameMinNumber){
-            throw new Error(error.range);
-        }
-        if(checkGameNumber > number.gameMaxNumber){
-            throw new Error(error.range);
-        }
-    }
+    // gameCount(getGameNumber){
+    //     const checkGameNumber = Number(getGameNumber);
+    //     console.log(getGameNumber);
+    //     if(isNaN(checkGameNumber)){
+    //         throw new Error(error.string);
+    //     }
+    //     if(checkGameNumber < number.gameMinNumber){
+    //         throw new Error(error.range);
+    //     }
+    //     if(checkGameNumber > number.gameMaxNumber){
+    //         throw new Error(error.range);
+    //     }
+    // }
     everyGame(eachGameNumber){
         eachGameNumber.forEach(element => {
             if(!number.withZeroNatural.includes(element)){
@@ -27,6 +27,7 @@ class validate{
     }
     reGame(doYouReGame){
         const checkReGameNumber = Number(doYouReGame);
+        console.log(checkReGameNumber);
         if(isNaN(checkReGameNumber)){
             throw new Error(error.string);
         }
